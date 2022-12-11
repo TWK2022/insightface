@@ -1,0 +1,2 @@
+CPU:pip install numpy pandas opencv-python onnxruntime insightface -i https://pypi.tuna.tsinghua.edu.cn/simple
+GPU:pip install numpy pandas opencv-python onnxruntime-gpu insightface -i https://pypi.tuna.tsinghua.edu.cn/simple
