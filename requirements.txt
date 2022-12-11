@@ -1,2 +1,3 @@
+需要安装c++环境
 CPU:pip install numpy pandas cmake opencv-python onnxruntime insightface -i https://pypi.tuna.tsinghua.edu.cn/simple
 GPU:pip install numpy pandas cmake opencv-python onnxruntime-gpu insightface -i https://pypi.tuna.tsinghua.edu.cn/simple
