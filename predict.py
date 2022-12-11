@@ -15,7 +15,7 @@ parser.add_argument('--threshold', default=0.5, type=float, help='|概率大于�
 parser.add_argument('--device', default='cuda', type=str, help='|使用的设备cpu/cuda|')
 parser.add_argument('--float16', default=False, type=bool, help='|要与特征数据库精度一致，True为float16，False为float32|')
 parser.add_argument('--camera', default=True, type=bool, help='|True为启用摄像头，False为预测图片文件夹|')
-parser.add_argument('--camera_time', default=50, type=int, help='|预测间隙，单位毫秒，越短显示越不卡顿但越耗性能|')
+parser.add_argument('--camera_time', default=20, type=int, help='|预测间隙，单位毫秒，越短显示越不卡顿但越耗性能|')
 args = parser.parse_args()
 
 
