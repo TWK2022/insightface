@@ -1,4 +1,4 @@
-## 快速建立人脸数据库并进行人脸检测和身份识别
+## 快速建立人脸特征数据库并进行人脸检测和身份识别
 >基于insightface官方项目改编:https://github.com/deepinsight/insightface  
 >首次运行代码时会自动下载模型文件到用户下的.insightface文件夹中
 ### 1，database_prepare.py
