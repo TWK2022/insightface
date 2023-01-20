@@ -47,8 +47,8 @@ def predict():
         if pred == []:
             print('| {}:未检测到人脸 |'.format(image_dir[i]))
             continue
-        pred_feature = []
-        pred_bbox = []
+        pred_feature = []  # 记录所有预测的人脸特征
+        pred_bbox = []  # 记录所有预测的人脸框
         for j in range(len(pred)):  # 一张图片可能不只一个人脸
             pred_feature.append(pred[j].normed_embedding)
             pred_bbox.append(pred[j].bbox)
@@ -88,8 +88,8 @@ def predict_camera():
         _, image = capture.read()  # 读取摄像头的一帧画面
         pred = model.get(image)
         if pred != []:
-            pred_feature = []
-            pred_bbox = []
+            pred_feature = []  # 记录所有预测的人脸特征
+            pred_bbox = []  # 记录所有预测的人脸框
             for j in range(len(pred)):  # 一张图片可能不只一个人脸
                 pred_feature.append(pred[j].normed_embedding)
                 pred_bbox.append(pred[j].bbox)
