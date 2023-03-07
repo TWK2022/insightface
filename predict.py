@@ -60,7 +60,7 @@ def predict():
                 name = column[feature_argmax] + ':{:.2f}'.format(result[j][feature_argmax])
                 color = (0, 255, 0)  # 绿色
             else:
-                name = 'None_{:.2f}'.format(result[j][feature_argmax])
+                name = 'None:{:.2f}'.format(result[j][feature_argmax])
                 color = (0, 0, 255)  # 红色
             # 画人脸框
             image = draw(image, pred_bbox[j], name, color)
@@ -98,10 +98,10 @@ def predict_camera():
             for j in range(len(result)):  # 一张图片可能不只一个人脸
                 feature_argmax = np.argmax(result[j])
                 if result[j][feature_argmax] > args.threshold:
-                    name = column[feature_argmax] + '_{:.2f}'.format(result[j][feature_argmax])
+                    name = column[feature_argmax] + ':{:.2f}'.format(result[j][feature_argmax])
                     color = (0, 255, 0)  # 绿色
                 else:
-                    name = 'None_{:.2f}'.format(result[j][feature_argmax])
+                    name = 'None:{:.2f}'.format(result[j][feature_argmax])
                     color = (0, 0, 255)  # 红色
                 # 画人脸框
                 image = draw(image, pred_bbox[j], name, color)
