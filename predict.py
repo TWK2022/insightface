@@ -8,10 +8,10 @@ import pandas as pd
 # -------------------------------------------------------------------------------------------------------------------- #
 # 设置
 parser = argparse.ArgumentParser(description='insightface')
-parser.add_argument('--image_root', default='image_predict', type=str, help='|要预测的图片文件夹位置|')
+parser.add_argument('--image_path', default='image_predict', type=str, help='|要预测的图片文件夹位置|')
 parser.add_argument('--database_path', default='feature_database.csv', type=str, help='|特征数据库位置(.csv)|')
 parser.add_argument('--input_size', default=640, type=int, help='|模型输入图片大小|')
-parser.add_argument('--threshold', default=0.5, type=float, help='|概率大于阈值判断有此人|')
+parser.add_argument('--threshold', default=0.45, type=float, help='|概率大于阈值判断有此人|')
 parser.add_argument('--device', default='cuda', type=str, help='|使用的设备cpu/cuda|')
 parser.add_argument('--float16', default=False, type=bool, help='|要与特征数据库精度一致，True为float16，False为float32|')
 parser.add_argument('--camera', default=True, type=bool, help='|True为启用摄像头，False为预测图片文件夹|')
@@ -40,9 +40,9 @@ def predict():
     column = df_database.columns
     feature = df_database.values
     # 开始预测
-    image_dir = os.listdir(args.image_root)  # 获取预测图片路径
+    image_dir = os.listdir(args.image_path)  # 获取预测图片路径
     for i in range(len(image_dir)):
-        image = cv2.imread(args.image_root + '/' + image_dir[i])
+        image = cv2.imread(args.image_path + '/' + image_dir[i])
         pred = model.get(image)
         if pred == []:
             print('| {}:未检测到人脸 |'.format(image_dir[i]))
