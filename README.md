@@ -12,4 +12,4 @@
 ### 其他
 >github链接：https://github.com/TWK2022/insightface  
 >学习笔记：https://github.com/TWK2022/notebook  
->邮箱：1024565378@qq.com
+>邮箱：1024565378@qq.com  
